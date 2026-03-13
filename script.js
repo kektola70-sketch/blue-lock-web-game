@@ -22,11 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Обработка кнопок Главного меню
     document.getElementById("btn-play").addEventListener("click", () => {
-        alert("Поиск матча... (Сделаем в следующем шаге)");
+        alert("Поиск матча... (Сделаем позже)");
     });
 
     document.getElementById("btn-spin").addEventListener("click", () => {
-        alert("Рулетка талантов... (Сделаем систему как в Роблоксе)");
+        alert("Рулетка талантов... (Сделаем механику Спинов)");
     });
 
     document.getElementById("btn-stats").addEventListener("click", () => {
