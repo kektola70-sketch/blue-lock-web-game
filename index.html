@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Blue Lock: Rivals Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ЭКРАН ЗАГРУЗКИ -->
+    <div id="loading-screen">
+        <div class="logo">
+            <h1>BLUE LOCK <br><span class="blue-text">RIVALS</span></h1>
+        </div>
+        
+        <div class="loading-container">
+            <p id="loading-text">Пробуждение эго... 0%</p>
+            <div class="progress-box">
+                <div class="progress-bar" id="progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ГЛАВНОЕ МЕНЮ (скрыто до конца загрузки) -->
+    <div id="main-menu" class="hidden">
+        <h1 class="blue-text">ГЛАВНОЕ МЕНЮ</h1>
+        <button class="btn">ИГРАТЬ</button>
+        <button class="btn">ВЫБОР ОРУЖИЯ (СКИЛЛЫ)</button>
+        <button class="btn">СТАТИСТИКА</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
