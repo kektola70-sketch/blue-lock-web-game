@@ -1,49 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let progress = 0;
-    const progressBar = document.getElementById("progress");
-    const loadingText = document.getElementById("loading-text");
-    const loadingScreen = document.getElementById("loading-screen");
+    const startScreen = document.getElementById("start-screen");
+    const statusText = document.getElementById("status-text");
     const mainMenu = document.getElementById("main-menu");
 
-    // Фразы для атмосферы Blue Lock
-    const phrases = [
-        "Анализ поля...",
-        "Поиск эгоистов...",
-        "Пробуждение эго...",
-        "Подготовка оружия...",
-        "Вход в Blue Lock..."
-    ];
+    let isLoaded = false;
 
-    // Функция симуляции загрузки
-    let interval = setInterval(() => {
-        // Случайный шаг загрузки от 1 до 5%
-        progress += Math.floor(Math.random() * 5) + 1; 
+    // Имитация загрузки (3 секунды)
+    setTimeout(() => {
+        isLoaded = true;
+        // Текст меняется после загрузки
+        statusText.innerText = "Нажмите, чтобы продолжить";
+    }, 3000); 
 
-        if (progress >= 100) {
-            progress = 100;
-            clearInterval(interval);
-            finishLoading();
-        }
-
-        // Обновляем полосу
-        progressBar.style.width = progress + "%";
-        
-        // Меняем текст в зависимости от процента
-        let phraseIndex = Math.floor((progress / 100) * phrases.length);
-        if (phraseIndex >= phrases.length) phraseIndex = phrases.length - 1;
-        
-        loadingText.innerText = `${phrases[phraseIndex]} ${progress}%`;
-
-    }, 150); // Скорость обновления в миллисекундах
-
-    function finishLoading() {
-        loadingText.innerText = "ГОТОВО!";
-        
-        // Ждем полсекунды и показываем меню
-        setTimeout(() => {
-            // Плавное затухание (если добавим анимацию CSS) или просто скрытие
-            loadingScreen.classList.add("hidden");
+    // Обработка тапа по стартовому экрану
+    startScreen.addEventListener("click", () => {
+        if (isLoaded) {
+            startScreen.classList.add("hidden");
             mainMenu.classList.remove("hidden");
-        }, 500);
-    }
+        }
+    });
+
+    // Обработка кнопок Главного меню
+    document.getElementById("btn-play").addEventListener("click", () => {
+        alert("Поиск матча... (Сделаем в следующем шаге)");
+    });
+
+    document.getElementById("btn-spin").addEventListener("click", () => {
+        alert("Рулетка талантов... (Сделаем систему как в Роблоксе)");
+    });
+
+    document.getElementById("btn-stats").addEventListener("click", () => {
+        alert("Меню прокачки (Скорость, Удар, Дриблинг)");
+    });
 });
