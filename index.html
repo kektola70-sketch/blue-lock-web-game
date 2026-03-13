@@ -2,32 +2,40 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Blue Lock: Rivals Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <title>Blue Lock: Rivals</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ЭКРАН ЗАГРУЗКИ -->
-    <div id="loading-screen">
-        <div class="logo">
-            <h1>BLUE LOCK <br><span class="blue-text">RIVALS</span></h1>
-        </div>
-        
-        <div class="loading-container">
-            <p id="loading-text">Пробуждение эго... 0%</p>
-            <div class="progress-box">
-                <div class="progress-bar" id="progress"></div>
-            </div>
-        </div>
+    <!-- СТАРТОВЫЙ ЭКРАН -->
+    <div id="start-screen">
+        <div class="overlay"></div>
+        <div id="status-text" class="pulsate">Загрузка...</div>
     </div>
 
-    <!-- ГЛАВНОЕ МЕНЮ (скрыто до конца загрузки) -->
+    <!-- ГЛАВНОЕ МЕНЮ / ЛОББИ (появится после клика) -->
     <div id="main-menu" class="hidden">
-        <h1 class="blue-text">ГЛАВНОЕ МЕНЮ</h1>
-        <button class="btn">ИГРАТЬ</button>
-        <button class="btn">ВЫБОР ОРУЖИЯ (СКИЛЛЫ)</button>
-        <button class="btn">СТАТИСТИКА</button>
+        
+        <!-- Верхняя панель (Статистика игрока) -->
+        <div class="top-bar">
+            <div class="player-info">Игрок: Эгоист <br> Уровень: 1</div>
+            <div class="currency">Спины: 10</div>
+        </div>
+        
+        <!-- Центр экрана (Название и текущий талант) -->
+        <div class="center-display">
+            <h1 class="blue-text">BLUE LOCK<br>RIVALS</h1>
+            <div class="trait-display">Твой талант: <span class="white-text" id="current-trait">Нет</span></div>
+        </div>
+
+        <!-- Кнопки управления -->
+        <div class="menu-buttons">
+            <button class="menu-btn" id="btn-play">Начать матч</button>
+            <button class="menu-btn" id="btn-spin">Крутить талант (Спин)</button>
+            <button class="menu-btn" id="btn-stats">Прокачка</button>
+        </div>
+
     </div>
 
     <script src="script.js"></script>
